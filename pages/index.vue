@@ -1,10 +1,7 @@
 <template>
   <main class="pt-5">
     <div>
-      <img
-        class="nav-logo w-[100px] m-auto"
-        src="~/assets/img/logo-concept.svg"
-      />
+      <Logo class="nav-logo w-[100px] m-auto" />
       <p class="text-center text-sm">&lt;mock logo&gt;</p>
     </div>
     <div class="slogan text-center">
@@ -14,10 +11,10 @@
     <nav class="w-fit m-auto mt-3 p-3">
       <ul class="flex gap-1">
         <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/test">Management</NuxtLink></li>
-        <li><NuxtLink to="/today">IoT</NuxtLink></li>
-        <li><NuxtLink to="/category">AI</NuxtLink></li>
-        <li><NuxtLink to="/category">TRC Living</NuxtLink></li>
+        <li><NuxtLink to="/">Management</NuxtLink></li>
+        <li><NuxtLink to="/">IoT</NuxtLink></li>
+        <li><NuxtLink to="/">AI</NuxtLink></li>
+        <li><NuxtLink to="/">TRC Living</NuxtLink></li>
       </ul>
     </nav>
 

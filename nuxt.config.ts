@@ -12,9 +12,9 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt'],
   css: [
     '~/assets/css/app.css',
-    // '~/assets/css/elements.css',
-    // '~/assets/css/components.css',
-    // '~/assets/css/text.css',
+    '~/assets/css/elements.css',
+    '~/assets/css/components.css',
+    '~/assets/css/text.css',
   ],
   pinia: {
     autoImports: ['defineStore'],
@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     public: {
       rootDir: process.env.ASSET_DIR,
       dbPrefix: process.env.DB_PREFIX,
+      backendUrl: process.env.BACKEND_URL,
     },
   },
 });
