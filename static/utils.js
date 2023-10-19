@@ -76,10 +76,7 @@ export const deepCompare = function (obj1, obj2) {
 export const cloudOverride = function (obj, cloudObj) {
   if (!cloudObj) return;
   for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      if (obj[key] !== cloudObj[key]) {
-        obj[key] = cloudObj[key];
-      }
-    }
+    if (obj.hasOwnProperty(key))
+      if (obj[key] !== cloudObj[key]) obj[key] = cloudObj[key];
   }
 };
