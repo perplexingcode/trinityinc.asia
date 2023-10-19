@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       rootDir: process.env.ASSET_DIR,
+      dbPrefix: process.env.DB_PREFIX,
     },
   },
 });
