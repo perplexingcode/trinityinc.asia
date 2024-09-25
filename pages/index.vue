@@ -2,7 +2,6 @@
   <main class="pt-5">
     <div>
       <Logo class="nav-logo w-[100px] m-auto" />
-      <p class="text-center text-sm">&lt;mock logo&gt;</p>
     </div>
     <div class="slogan text-center">
       <h3>We build a better world.</h3>

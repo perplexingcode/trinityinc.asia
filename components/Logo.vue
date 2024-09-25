@@ -1,62 +1,119 @@
 <template>
   <div>
-    <div
-      v-if="isEditing"
-      class="flex flex-col gap-2 fixed top-[40vh] left-[50vw] -translate-x-1/2 -translate-y-1/2 border border-gray-300 rounded-md p-[1.1rem] bg-white dark:bg-gray-800 dark:border-gray-600 shadow-md z-10"
-      ref="editBox"
-    >
-      <div v-for="(color, item) in colors" class="flex w-[10.88rem]">
-        <span
-          class="w-[6rem] inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
-        >
-          {{ item }}
-        </span>
-        <input
-          type="text"
-          id="color_technology"
-          class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="#color"
-          v-model="colors[item]"
-        />
-      </div>
-      <button
-        type="button"
-        @click="saveChanges"
-        class="mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-teal-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-      >
-        Save
-      </button>
-    </div>
     <svg
-      @dblclick="resetColors"
-      class="trinity-inc_logo cursor-pointer"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 571.33 497.3"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 512 512"
     >
       <defs>
-        <component is="style" class="logo" :id="'s' + id">
-          .business { fill: {{ colors.business }}; } .aesthetics { fill:
-          {{ colors.aesthetics }}; } .technology { fill:
-          {{ colors.technology }}; }
-        </component>
+        <linearGradient
+          id="linear-gradient"
+          x1="-5309.82"
+          y1="7784.88"
+          x2="-5345.26"
+          y2="8048.66"
+          gradientTransform="translate(-9217.17 -656.37) rotate(-118.83)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#62b22f" />
+          <stop offset="0.11" stop-color="#6db73d" />
+          <stop offset="0.32" stop-color="#8ac563" />
+          <stop offset="0.61" stop-color="#b8dca1" />
+          <stop offset="0.96" stop-color="#f7fbf5" />
+          <stop offset="1" stop-color="#fff" />
+        </linearGradient>
+        <linearGradient
+          id="linear-gradient-2"
+          x1="338.99"
+          y1="223.76"
+          x2="303.56"
+          y2="487.52"
+          gradientTransform="translate(4.77 -4.92) rotate(1.17)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#f6a43c" />
+          <stop offset="0.12" stop-color="#f7ab4a" />
+          <stop offset="0.34" stop-color="#f8bc70" />
+          <stop offset="0.64" stop-color="#fbd9ae" />
+          <stop offset="1" stop-color="#fff" />
+        </linearGradient>
+        <linearGradient
+          id="linear-gradient-3"
+          x1="-9036.54"
+          y1="-789.09"
+          x2="-9071.97"
+          y2="-525.34"
+          gradientTransform="matrix(-0.52, 0.86, -0.86, -0.52, -5087.28, 7710.36)"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#335da8" />
+          <stop offset="0.11" stop-color="#4168ae" />
+          <stop offset="0.32" stop-color="#6787be" />
+          <stop offset="0.62" stop-color="#a5b7d9" />
+          <stop offset="0.97" stop-color="#f9fafc" />
+          <stop offset="1" stop-color="#fff" />
+        </linearGradient>
       </defs>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
-          <path
-            @click="syncColors"
-            class="business"
-            d="M557.39,492.62a18.07,18.07,0,0,0-1.91-1Q424.71,425.63,294,359.48c-6.07-3.08-10.68-2.8-16.59.21Q147,426.11,16.36,492.18c1.33,3.86,8.55,4.75,13.34,4.91h3.45l.87,0-.09,0c46.41.05,92.83.11,139.25-.16a47.21,47.21,0,0,0,17.88-4c29.87-12.93,59.48-26.45,89.34-39.4a14.91,14.91,0,0,1,10.68-.17q42.48,18.43,84.6,37.69c9.08,4.14,18.14,6.47,28.3,6.24,23.69-.54,47.4-.17,71.1-.17v.05q32.51,0,65,0h8.42c4-.37,8.19-1.45,9.34-4.17Z"
-          />
-          <path
-            @click="isEditing = !isEditing"
-            class="aesthetics"
-            d="M568.35,461.5q-1.33-2.36-2.68-4.7v0h0q-35.48-62.24-71.14-124.37a43.25,43.25,0,0,0-11.27-12.57c-26-19.57-52.41-38.64-78.41-58.23-3.06-2.31-6-6.64-6.41-10.32-3.4-29.93-6-60-9.29-89.91-.84-7.7-1.5-16.18-5.12-22.71C359.82,95,334.85,51.81,310.12,8.46c-2.57-3.88-6.54-8.64-10.18-8.07l0,1H300c.91,20.32,1.76,40.63,2.76,60.94q4.08,82.43,8.24,164.84c1.13,22.7,2.3,45.4,3.2,68.11.29,7.2,2.76,12.09,9.17,16.31Q440.38,388.52,557,466c4.35,2.88,8.67,5.83,13,8.68C572.82,472,570.53,465.82,568.35,461.5Z"
-          />
-          <path
-            @click="redirect"
-            class="technology"
-            d="M271.9.06c-2.74-.49-5.48,2.08-7.7,5.12q-2.29,4-4.6,8.05l-.17.39v-.1q-35.88,62.84-71.66,125.73a21.47,21.47,0,0,0-2.95,8c-3.5,33.54-7,67.09-10,100.67-.59,6.47-2.69,11-8.11,14.91q-39,28.13-77.53,57a43.29,43.29,0,0,0-11.36,12.54Q41.91,394.6,6.56,457.19l.11-.08-.29.4L1,467c-1.09,2.9-1.5,5.77,0,7.58a18.43,18.43,0,0,0,2.9-1.49Q127.55,391.3,251.05,309.23a15.12,15.12,0,0,0,6-10.13c2.18-32.94,3.9-65.9,5.52-98.87C265.77,134.13,268.88,68,272.12.16Z"
-          />
+          <g id="Trinity">
+            <g
+              id="Technology"
+              @click="goTechlogy"
+              class="cursor-pointer hover:stroke-[0.33rem] stroke-blue-300"
+            >
+              <path
+                class="cls-5"
+                d="M170.91,407.73s-8.89,42.81-15.2,67.19C98.92,487.69,49.92,469,25.62,414.19S20.16,274.26,69.5,199.77C82.48,242.78,170.91,407.73,170.91,407.73Z"
+              />
+              <path
+                class="cls-6"
+                d="M155.71,474.92c41-9.54,82.08-39.94,111.35-70.12-10.64,8.21-34-6.6-47.09-23.94a494.59,494.59,0,0,1-64.53-116.39c-22.54-58-28.15-119.18-15.21-161.76L69.5,199.77C17.85,279,87.92,459.73,155.71,474.92Z"
+              />
+            </g>
+
+            <a
+              href="https://open.spotify.com/playlist/3a8JTHdW90kQKHPF7Uh3Ge?si=10c5efe0da4d4bec"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <g
+                id="Aethetics"
+                @click="goAesthetics"
+                class="cursor-pointer hover:stroke-[0.33rem] stroke-pink-300"
+              >
+                <path
+                  class="cls-3"
+                  d="M404.53,295.84S446,282.13,470.31,275.4c39.45,42.81,47.75,94.6,12.45,143s-118.45,74.69-207.62,69.21C305.89,454.9,404.53,295.84,404.53,295.84Z"
+                />
+                <path
+                  class="cls-4"
+                  d="M470.31,275.4c-28.76-30.73-75.63-51.1-116.4-61.36,12.44,5.11,11.3,32.75,2.82,52.75C339.68,307,315.41,347,288.2,380.87c-39,48.54-89.14,84-132.49,94.05l119.43,12.73C369.56,492.76,491.06,341.71,470.31,275.4Z"
+                />
+              </g>
+            </a>
+            <a
+              href="https://open.spotify.com/playlist/17dM39VOXbwGjOcOG120Rq?si=0fd3d6515fe44e18"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <g
+                id="Business"
+                @click="goBusiness"
+                class="cursor-pointer hover:stroke-[0.33rem] stroke-teal-300"
+              >
+                <path
+                  class="cls-1"
+                  d="M190.82,149.47s-32.63-29.1-50.59-46.76c17.34-55.57,58-88.64,117.64-82.3S381.78,85.65,421.62,165.62C377.88,155.36,190.82,149.47,190.82,149.47Z"
+                />
+                <path
+                  class="cls-2"
+                  d="M140.23,102.71C128,143,133.78,193.77,145.28,234.2,143.49,220.88,168,208,189.56,205.39a494.38,494.38,0,0,1,133.06,2.31c61.53,9.5,117.28,35.21,147.69,67.7L421.62,165.62C378.84,81.28,187.28,51.6,140.23,102.71Z"
+                />
+              </g>
+            </a>
+          </g>
+          <rect class="cls-7" width="512" height="512" />
         </g>
       </g>
     </svg>
@@ -67,31 +124,33 @@ import { v4 } from 'uuid';
 import { getById, cache } from '~/static/db';
 import { cloudOverride } from '~/static/utils';
 import { onClickOutside } from '@vueuse/core';
-const colors = reactive({
-  technology: '#eee',
-  aesthetics: '#eee',
-  business: '#eee',
-});
-const editBox = ref(null);
-onClickOutside(editBox, () => (isEditing.value = false));
-const isEditing = ref(false);
-const id = v4();
-function saveChanges() {
-  isEditing.value = false;
-  cache('logo_colors', colors);
-}
-function redirect() {
+
+function goTechlogy() {
   window.location.href = '/';
 }
-async function syncColors() {
-  const cloudColors = (await getById('cache', 'logo_colors')).data._rawValue
-    ?.value;
-  if (cloudColors) cloudOverride(colors, cloudColors);
-}
-function resetColors() {
-  colors.technology = '#eee';
-  colors.aesthetics = '#eee';
-  colors.business = '#eee';
-}
+function goAesthetics() {}
+function goBusiness() {}
 </script>
-<style></style>
+<style scoped>
+.cls-1 {
+  fill: #62b22f;
+}
+.cls-2 {
+  fill: url(#linear-gradient);
+}
+.cls-3 {
+  fill: #f6a43c;
+}
+.cls-4 {
+  fill: url(#linear-gradient-2);
+}
+.cls-5 {
+  fill: #335da8;
+}
+.cls-6 {
+  fill: url(#linear-gradient-3);
+}
+.cls-7 {
+  fill: none;
+}
+</style>
