@@ -3,17 +3,42 @@
     <div>
       <Logo class="nav-logo w-[100px] m-auto" />
     </div>
-    <div class="slogan text-center">
+    <div class="slogan text-center font-[500]">
       <h3>We build a better world.</h3>
       <h3>Chúng tôi xây dựng một thế giới tốt-đẹp-hơn.</h3>
     </div>
     <nav class="w-fit m-auto mt-3 p-3">
       <ul class="flex gap-1">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li><NuxtLink to="/">Management</NuxtLink></li>
-        <li><NuxtLink to="/">IoT</NuxtLink></li>
-        <li><NuxtLink to="/">AI</NuxtLink></li>
-        <li><NuxtLink to="/">TRC Living</NuxtLink></li>
+        <li class="active">
+          <NuxtLink to="/"
+            ><div class="flex flex-col items-center">
+              <span>Management</span
+              ><span class="text-xs text-gray-700">Phase III</span>
+            </div></NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink to="/"
+            ><div class="flex flex-col items-center">
+              <span>AI</span><span class="text-xs text-gray-700">Phase VI</span>
+            </div></NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink to="/"
+            ><div class="flex flex-col items-center">
+              <span>IoT</span><span class="text-xs text-gray-700">Phase V</span>
+            </div></NuxtLink
+          >
+        </li>
+        <li>
+          <NuxtLink to="/"
+            ><div class="flex flex-col items-center">
+              <span>Trinity Life</span
+              ><span class="text-xs text-gray-700">D3</span>
+            </div></NuxtLink
+          >
+        </li>
       </ul>
     </nav>
 
@@ -29,5 +54,8 @@ li:hover {
 
 ul li {
   @apply bg-gray-200 p-3 cursor-pointer;
+}
+ul li.active {
+  @apply bg-yellow-300 p-3 cursor-pointer;
 }
 </style>
