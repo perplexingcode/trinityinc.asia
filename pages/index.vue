@@ -20,7 +20,7 @@
         <li>
           <NuxtLink to="/"
             ><div class="flex flex-col items-center">
-              <span>AI</span><span class="text-xs text-gray-700">Phase VI</span>
+              <span>AI</span><span class="text-xs text-gray-700">Phase IV</span>
             </div></NuxtLink
           >
         </li>
