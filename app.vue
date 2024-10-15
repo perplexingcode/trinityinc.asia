@@ -15,7 +15,6 @@ const trinityAI = {
   'data-bubble-color': '',
   async: true,
   defer: true,
-  crossorigin: 'anonymous',
 };
 useHead({
   title: 'Trinity Inc - We build a better world',
