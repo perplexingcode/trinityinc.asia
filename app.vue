@@ -31,4 +31,9 @@ useHead({
   padding: 6px !important;
   border-radius: 40% !important;
 }
+
+.greetingBox circle {
+  fill: #f8fafc !important;
+  stroke: none;
+}
 </style>
