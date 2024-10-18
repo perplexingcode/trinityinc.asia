@@ -30,10 +30,29 @@ useHead({
 .box-chat-embed img:last-child {
   padding: 6px !important;
   border-radius: 40% !important;
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 2px) !important;
+}
+
+.greetingBox {
+  background: #fefefa !important;
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 6px) !important;
 }
 
 .greetingBox circle {
   fill: #f8fafc !important;
   stroke: none;
+}
+
+.greetingBox p {
+  color: #051c2c !important;
+  font-family: Be Vietnam Pro, sans-serif !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.55rem !important;
+}
+
+.greetingBox img {
+  display: none;
 }
 </style>
