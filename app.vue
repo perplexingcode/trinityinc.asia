@@ -21,4 +21,11 @@ useHead({
   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
   script: [trinityAI],
 });
+
+onMounted(async () => {
+  await nextTick();
+  useHead({
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
+  });
+});
 </script>
