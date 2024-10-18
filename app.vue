@@ -18,14 +18,7 @@ const trinityAI = {
 };
 useHead({
   title: 'Trinity Inc - We build a better world',
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon-plain.svg' }],
   script: [trinityAI],
-});
-
-onMounted(async () => {
-  await nextTick();
-  useHead({
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
-  });
 });
 </script>
