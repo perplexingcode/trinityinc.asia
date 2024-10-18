@@ -22,3 +22,13 @@ useHead({
   script: [trinityAI],
 });
 </script>
+<style>
+.box-chat-embed svg {
+  stroke: #003eb3;
+}
+
+.box-chat-embed img:last-child {
+  padding: 6px !important;
+  border-radius: 40% !important;
+}
+</style>
