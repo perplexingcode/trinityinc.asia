@@ -21,6 +21,28 @@ useHead({
   link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon-plain.svg' }],
   script: [trinityAI],
 });
+
+const htmlMessages = [
+  `Hello! I'm Trinity. How can I help you today?`,
+  `Did you know that blue is the only color not naturally found in nature?
+  This makes it a symbol of novelty.`,
+  `Speed is the most important thing in business.`,
+  `A kind heart remains calm amidst the storm. A strong mind is not shaken by it.`,
+  `Existence is the highest virtue.`,
+  `Play reasonably, opportunity will come.`,
+  `Precision is the foundation of honesty.`,
+  `Abstraction is elevation.`,
+  // `Mistakes and successes converge at the knot of one's destiny.`,
+];
+onMounted(async () => {
+  await nextTick();
+  if (!process.client) return;
+  const aiText = document.querySelector('.greetingBox p');
+  setInterval(() => {
+    aiText.textContent =
+      htmlMessages[Math.floor(Math.random() * htmlMessages.length)];
+  }, 13000);
+});
 </script>
 <style>
 .box-chat-embed svg {
@@ -36,6 +58,7 @@ useHead({
 .greetingBox {
   background: #fefefa !important;
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 6px) !important;
+  max-width: 33rem;
 }
 
 .greetingBox circle {
@@ -49,10 +72,11 @@ useHead({
   font-weight: 500 !important;
   text-align: center !important;
   padding-left: 0.5rem !important;
-  padding-right: 0.55rem !important;
+  padding-right: 0.5rem !important;
+  white-space: pre-wrap !important;
 }
 
-.greetingBox img {
+.greetingBox p + img {
   display: none;
 }
 </style>
