@@ -27,7 +27,7 @@ const htmlMessages = [
   `Did you know that blue is the only color not naturally found in nature?
   This makes it a symbol of novelty.`,
   `Speed is the most important thing in business.`,
-  `A kind heart remains calm amidst the storm. A strong mind is not shaken by it.`,
+  `A kind heart remains calm amidst the storm. A strong mind sees through its dark clouds.`,
   `Existence is the highest virtue.`,
   `Play reasonably, opportunity will come.`,
   `Precision is the foundation of honesty.`,
